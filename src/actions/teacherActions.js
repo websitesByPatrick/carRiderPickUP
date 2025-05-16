@@ -1,10 +1,11 @@
-'use server'
 
 
 export async function saveTeacher(formData)  {
+    'use server'
+
     const teacherData = {
-        teacherName: formData.get("teacherName"),
-        gradeLevel: formData.get("gradeLevel")
+        teacherName: formData.get("teacher"),
+        gradeLevel: formData.get("grade")
     }
     console.log(teacherData)
 }
