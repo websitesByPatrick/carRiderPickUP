@@ -5,7 +5,7 @@ const Navbar = () => {
     
 
   return (
-    <nav className="bg-slate-900 flex justify-between text-slate-100 h-16 text-center">
+    <nav className="bg-slate-900 flex justify-between text-slate-100 h-full text-center">
 
       <div className="flex justify-start items-center w-1/2 ml-10">
         <NavItem text="Home" route="/" />

@@ -1,11 +1,23 @@
 
+import connectDB from "../../database/connectDB"
+import mongoose from "mongoose"
+import Teacher from "../../database/models/teacherModel"
+
+
 
 export async function saveTeacher(formData)  {
     'use server'
-
-    const teacherData = {
-        teacherName: formData.get("teacher"),
+    const db = await connectDB()
+    const data = {
+        name: formData.get("teacher"),
         gradeLevel: formData.get("grade")
     }
-    console.log(teacherData)
+
+    const newTeacher = new Teacher({
+        name: formData.get("teacher"),
+        gradeLevel: formData.get("grade")
+    })
+    await newTeacher.save()
+    console.log("Teacher saved to MongoDB:", newTeacher)
+    
 }
